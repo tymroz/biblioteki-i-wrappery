@@ -2,7 +2,7 @@
 
 unsigned long long silnia_rekurencja(int n){
 	if (n == 0 || n == 1){
-		return 0;
+		return 1;
 	} else {
 		return n*silnia_rekurencja(n-1);
 	}
