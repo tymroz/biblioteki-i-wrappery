@@ -16,8 +16,8 @@ func main() {
     var b int = 134
     var c int = 48
     fmt.Printf("%dx + %dy = %d\n", a, b, c)
-    wynik_rek := rozwiaz_rekurencja(a, b, c)
-    wynik_petla := rozwiaz_petla(a, b, c)
+    var wynik_rek RownanieDiofantyczne = rozwiaz_rekurencja(a, b, c)
+    var wynik_petla RownanieDiofantyczne = rozwiaz_petla(a, b, c)
     if c % wynik_rek.nwd != 0 {
         fmt.Printf("Brak rozwiazan\n")
     } else {
