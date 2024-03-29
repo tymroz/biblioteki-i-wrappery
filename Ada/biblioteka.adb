@@ -38,4 +38,57 @@ package body Biblioteka is
             return NWD_Rekurencja(B, A mod B);
         end if;
     end NWD_Rekurencja;
+
+    function Rozwiaz_Rekurencja(A, B, C: Integer) return RownanieDiofantyczne is
+        Wynik, Rozwiazanie: RownanieDiofantyczne;
+    begin
+        Wynik.Nwd := NWD_Petla(A, B);
+        Wynik.A := A;
+        Wynik.B := B;
+        Wynik.C := C;
+        
+        if B = 0 then
+            Wynik.X := C / A;
+            Wynik.Y := 0;
+        else
+            Rozwiazanie := Rozwiaz_Rekurencja(B, A mod B, C);
+            Wynik.X := Rozwiazanie.Y;
+            Wynik.Y := Rozwiazanie.X - (A / B) * rozwiazanie.Y;
+        end if;     
+        return wynik;
+    end rozwiaz_rekurencja;
+    
+    function Rozwiaz_Petla(A, B, C: Integer) return RownanieDiofantyczne is
+        Wynik: RownanieDiofantyczne;
+        A_Copy : Integer := A;
+        B_Copy : Integer := B;
+        C_Copy : Integer := C;
+        x0, y0, x1, y1, q, temp: Integer;
+    begin
+        Wynik.Nwd := NWD_Petla(A, B);
+        Wynik.A := A;
+        Wynik.B := B;
+        Wynik.C := C;
+        
+        x0 := 1;
+        y0 := 0;
+        x1 := 0;
+        y1 := 1;
+        
+        while B_Copy /= 0 loop
+            q := A_Copy / B_Copy;
+            temp := B_Copy;
+            B_Copy := A_Copy mod B_Copy;
+            A_Copy := temp;
+            temp := x1;
+            x1 := x0 - q * x1;
+            x0 := temp;
+            temp := y1;
+            y1 := y0 - q * y1;
+            y0 := temp;
+        end loop;
+        Wynik.X := x0 * (C_Copy / A_Copy);
+        Wynik.Y := y0 * (C_Copy / A_Copy);
+        return wynik;
+    end rozwiaz_petla;
 end Biblioteka;
