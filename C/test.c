@@ -1,11 +1,27 @@
 #include "biblioteka.h"
 
 int main(){
-    printf("rekurencja: 7! = %llu\n", silnia_rekurencja(7));
-    printf("petla: 7! = %llu\n", silnia_petla(7));
+    int n = 7;
+    printf("\nrekurencja: %d! = %llu\n", n, silnia_rekurencja(n));
+    printf("petla: %d! = %llu\n\n", n, silnia_petla(n));
 
-    printf("rekurencja: NWD(170, 136) = %u\n", NWD_rekurencja(170, 136));
-    printf("petla: NWD(170, 136) = %u\n", NWD_petla(170, 136));
+    int k = 170;
+    int l = 136;
+    printf("rekurencja: NWD(%d, %d) = %u\n", k, l, NWD_rekurencja(k, l));
+    printf("petla: NWD(%d, %d) = %u\n\n", k, l, NWD_petla(k, l));
 
+    int a = 170;
+    int b = 134;
+    int c = 48;
+    printf("%dx + %dy = %d\n", a, b, c);
+    RownanieDiofantyczne wynik_rek = rozwiaz_rekurencja(a, b, c);
+    RownanieDiofantyczne wynik_petla = rozwiaz_petla(a, b, c);
+    if(c % wynik_rek.nwd != 0){
+        printf("Brak rozwiazan\n\n");
+    } else{
+        printf("rekurencyjne: x = %d + %d * k, y = %d - %d * k\n", wynik_rek.x, wynik_rek.b/wynik_rek.nwd, wynik_rek.y, wynik_rek.a/wynik_rek.nwd);
+        printf("petla: x = %d + %d * k, y = %d - %d * k\n\n", wynik_petla.x, wynik_petla.b / wynik_petla.nwd, wynik_petla.y, wynik_petla.a / wynik_petla.nwd);
+    }
+    
     return 0;
 }
