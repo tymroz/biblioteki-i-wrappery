@@ -1,6 +1,6 @@
 package main
 
-func silnia_rekurencja(n int) int {
+func silnia_rekurencja(n uint64) uint64 {
 	if n < 2 {
 		return 1
 	} else {
@@ -8,9 +8,9 @@ func silnia_rekurencja(n int) int {
 	}
 }
 
-func silnia_petla(n int) int {
-	var wynik int = 1
-	var i int = 2
+func silnia_petla(n uint64) uint64 {
+	var wynik uint64 = 1
+	var i uint64 = 2
 	for ; i <= n; i++ {
 		wynik = wynik * i
 	} 
