@@ -1,4 +1,5 @@
 #include "biblioteka.h"
+#include <stdio.h>
 
 int main(){
     int n = 7;
