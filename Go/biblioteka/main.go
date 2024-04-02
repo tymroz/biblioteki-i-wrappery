@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var n uint64 = 7
+	var n int = 7
     fmt.Printf("rekurencja: %d! = %d\n", n, silnia_rekurencja(n))
     fmt.Printf("petla: %d! = %d\n\n", n, silnia_petla(n))
 
