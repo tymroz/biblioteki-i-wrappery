@@ -3,13 +3,13 @@
 
 int main(){
     int n = 7;
-    printf("rekurencja: %d! = %llu\n", n, silnia_rekurencja(n));
-    printf("petla: %d! = %llu\n\n", n, silnia_petla(n));
+    printf("rekurencja: %d! = %d\n", n, silnia_rekurencja(n));
+    printf("petla: %d! = %d\n\n", n, silnia_petla(n));
 
     int k = 170;
     int l = 136;
-    printf("rekurencja: NWD(%d, %d) = %u\n", k, l, NWD_rekurencja(k, l));
-    printf("petla: NWD(%d, %d) = %u\n\n", k, l, NWD_petla(k, l));
+    printf("rekurencja: NWD(%d, %d) = %d\n", k, l, NWD_rekurencja(k, l));
+    printf("petla: NWD(%d, %d) = %d\n\n", k, l, NWD_petla(k, l));
 
     int a = 170;
     int b = 134;
