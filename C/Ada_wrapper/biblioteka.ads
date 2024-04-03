@@ -12,4 +12,13 @@ package Biblioteka is
     function NWD_Petla(A, B: Integer) return Integer;
     pragma Export (C, NWD_Petla, "NWD_Petla");
 
+    type RownanieDiofantyczne is record
+        A, B, C, X, Y, Nwd: Integer;
+    end record;
+
+    function Rozwiaz_Rekurencja(A, B, C: Integer) return RownanieDiofantyczne;
+    pragma Export (C, Rozwiaz_Rekurencja, "Rozwiaz_Rekurencja");
+
+    function Rozwiaz_Petla(A, B, C: Integer) return RownanieDiofantyczne;
+    pragma Export (C, Rozwiaz_Petla, "Rozwiaz_Petla");
 end Biblioteka;
